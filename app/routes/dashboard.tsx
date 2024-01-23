@@ -1,9 +1,19 @@
-import { Outlet } from "@remix-run/react";
+import { GearIcon } from '@radix-ui/react-icons'
+import { Outlet } from '@remix-run/react'
+import { Button } from '~/components/ui/button'
 
 export default function Dashboard() {
   return (
-    <main className="flex flex-col gap-4 p-8">
-      <Outlet />
-    </main>
-  );
+    <>
+      <header className='flex justify-between border-b border-gray-200 px-8 py-4'>
+        <h1 className='text-3xl font-bold tracking-tight'>Hotel La Playa</h1>
+        <Button variant='ghost'>
+          <GearIcon />
+        </Button>
+      </header>
+      <main className='flex flex-col gap-4 px-8 pt-4'>
+        <Outlet />
+      </main>
+    </>
+  )
 }
